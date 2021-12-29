@@ -1,0 +1,5 @@
+.field__cell {
+  width: 45px;
+  height: 45px;
+  border: 1px solid black;
+}
