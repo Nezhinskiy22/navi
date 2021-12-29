@@ -1,0 +1,13 @@
+.button__main {
+  text-transform: uppercase;
+  background-color: #0075d8;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  margin-left: 10px;
+}
+
+.button__main:hover {
+  background-color: #005cac;
+}
