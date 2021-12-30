@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import Input from "./components/Input";
-import Field from "./components/Field";
 
 function App() {
   const [data, setData] = useState("");
