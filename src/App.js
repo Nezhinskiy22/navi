@@ -12,8 +12,6 @@ function App() {
       .then((response) => setData(response));
   }, []);
 
-  console.log(data);
-
   return (
     <div className="App">
       <Input data2={data} width={130} height={25} />

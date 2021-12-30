@@ -13,7 +13,7 @@ const Field = ({ mode }) => {
   return (
     <div>
       {rows.map((item) => (
-        <FieldRow quantity={rows} />
+        <FieldRow num={rows.indexOf(item) + 1} quantity={rows} />
       ))}
     </div>
   );
