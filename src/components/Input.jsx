@@ -1,28 +1,39 @@
 import React, { useState } from "react";
-import Field from "../Field";
+import Field from "./Field";
 import Button from "./Button";
 import "./Input.css";
 
-const Input = ({ data, width, height }) => {
+const Input = ({ data2, width, height }) => {
   const [mode, setMode] = useState("");
-  const handleChange = (e) => {
-    console.log(e.target.value);
-    setMode(e.target.value);
+  const [field, setField] = useState(null);
+
+  const changeMode = (e) => {
+    let key = e.target.value;
+    setMode(data2[key].field);
   };
+
+  const addField = () => {
+    setField(<Field mode={mode} />);
+  };
+
+  let allCategories = Object.keys(data2);
 
   return (
     <div className="input__start">
-      <select style={{ width, height }} onChange={(e) => handleChange(e)}>
-        <option value="" selected disabled hidden>
-          Pick mode
-        </option>
-        {Object.keys(data).map((item) => (
-          <option key={Math.random()} value={data.item}>
-            {item}
+      <div input__header>
+        <select style={{ width, height }} value={mode} onChange={changeMode}>
+          <option value="" selected disabled hidden>
+            Pick mode
           </option>
-        ))}
-      </select>
-      <Button children={"start"} />
+          {allCategories.map((item) => (
+            <option key={Math.random()} value={data2.value}>
+              {item}
+            </option>
+          ))}
+        </select>
+        <Button children={"start"} onClick={addField} />
+      </div>
+      <div>{field}</div>
     </div>
   );
 };
